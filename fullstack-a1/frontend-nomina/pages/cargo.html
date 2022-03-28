@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/formulario.css">
+  <script defer src="../js/cargo/cargo.js" type="module"></script>
+  <title>Cargo</title>
+</head>
+
+<body>
+  <!--* menu del sitio -->
+  <header class="header">
+    <nav class="navegacion">
+      <a href="../index.html" class="logo">
+        <img src="../img/foto.jpg" width="50px" alt="logo">
+        <div class="logo">
+          Rol de Pagos
+        </div>
+      </a>
+      <ul class="menu">
+        <li><a href="./cargo.html">Cargos</a></li>
+        <li><a href="./departamento.html">Departamentos</a></li>
+        <li><a href="./empleado.html">Empleados</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <div class="form-header">
+        <h2>FORMULARIO DE CARGOS</h2>
+      </div>
+      <form id="form-cargo" class="form">
+        
+        <div class="form-group">
+          
+          <label for="nombre">Descripcion</label>
+          <input title="Solo se permite ingresar letras y espacios en blanco" autofocus type="text"  class="input" name="descripcion" id="descripcion" placeholder="Escribe del cargo"
+          pattern="^[A-zÑñáéíóú]+((\s[A-zÑñáéíóú]+)?)+$"  required />
+        </div>
+        <div class="form-check">
+          <label>Activo
+            <input type="checkbox" id="activo" value="activo" checked />
+          </label>
+        </div>
+        <button id="enviar" type="submit" name="enviar">
+          Insertar
+        </button>
+
+      </form>
+      <div class="consulta none table-responsive" id="consulta">
+        <h3>Listado de Cargos</h3>
+        <table class="consulta-est" id="consulta-est" border="1">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Descripcion</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody class="detalle-est" id="detalle-cargos">
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/formulario.css">
+  <script defer src="../js/empleados/empleado.js" type="module"></script>
+
+  <title>Empleado</title>
+</head>
+
+<body>
+  <!--* menu del sitio -->
+  <header class="header">
+    <nav class="navegacion">
+      <a href="../index.html" class="logo">
+        <img src="../img/foto.jpg" width="50px" alt="logo">
+        <div class="logo">
+          Rol de Pagos
+        </div>
+      </a>
+      <ul class="menu">
+        <li><a href="./cargo.html">Cargos</a></li>
+        <li><a href="./departamento.html">Departamentos</a></li>
+        <li><a href="./empleado.html">Empleados</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <div class="form-header">
+        <h2>FORMULARIO DE EMPLEADOS</h2>
+      </div>
+      <form id="form-empleado" class="form">
+        <div class="form-group">
+          <label for="descripcion">Nombre</label>
+          <input type="text" class = "input" name="descripcion" id="descripcion" placeholder="Ingrese el nombre del empleado" title="Nombre de empleado solo puede tener letras y espacios"
+            pattern="^[A-zÑñáéíóú]+((\s[A-zÑñáéíóú]+)?)+$" required />
+        </div>
+
+        <div class="form-group">
+          <label for="cedula">Cedula</label>
+          <input type="text" class = "input"  name="cedula" id="cedula" placeholder="Ingrese la cedula del empleado"
+            title="Cedula invalida" pattern="^[0-9]{10,10}$" required />
+        </div>
+
+        <div class="form-group">
+          <label for="cargo">Cargo</label>
+          <select name="opciones-cargo"  id="opciones-cargo" required>
+            
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="departamento">Departamento</label>
+          <select name="opciones-departamento"   id="opciones-departamento" required>
+            
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="sueldo">Sueldo</label>
+          <input type="number"  class="input" name="sueldo" id="sueldo" placeholder="Ejemplo:850"
+            title="Verifique los datos, solo se aceptan numeros" min="100" step="any"  required />
+        </div>
+
+        <div class="form-check">
+          <label>Activo
+            <input type="checkbox" id="activo" value="activo" checked />
+          </label>
+        </div>
+
+        <button id="enviar" type="submit" name="enviar">
+          Insertar
+        </button>
+
+      </form>
+      <div class="consulta none table-responsive" id="consulta">
+        <h3>Listado de Empleados</h3>
+        <table class="consulta-empleados" id="consulta-empleados" border="1">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>NOMBRE</th>
+              <th>CEDULA</th>
+              <th>CARGO</th>
+              <th>DEPARTAMENTO</th>
+              <th>SUELDO</th>
+              <th>ESTADO</th>
+            </tr>
+          </thead>
+          <tbody class="detalle-est" id="detalle-empleados">
+            <!-- <tr>
+                    <td>1</td>
+                    <td>Analista</td>
+                    <td>Activo</td>
+                    <td>
+                      <button>✏️</button>
+                      <button>❌</button>
+                    </td>
+                  </tr> -->
+
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  
+
+  
+</body>
+
+</html>
